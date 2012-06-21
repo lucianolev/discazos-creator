@@ -1,0 +1,15 @@
+Source: discazos-creator
+Section: unknown
+Priority: extra
+Maintainer: Discazos Devel Team <creator@discazos.net>
+Build-Depends: debhelper (>= 8.0.0), libqt4-dev, qt4-qmake
+Standards-Version: 3.9.2
+Homepage: http://discazos.net
+#Vcs-Git: git://git.debian.org/collab-maint/discazos-creator.git
+#Vcs-Browser: http://git.debian.org/?p=collab-maint/discazos-creator.git;a=summary
+
+Package: discazos-creator
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Discazos Creator
+ A simple tool to create a Discazo for sharing to the Discazos.net community.

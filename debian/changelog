@@ -1,0 +1,11 @@
+discazos-creator (0.1.1-1) unstable; urgency=low
+
+  * Fix on saving the info.xml in the correct dir.
+
+ -- Discazos Devel Team <creator@discazos.net>  Sat, 19 May 2012 02:57:53 -0300
+
+discazos-creator (0.1.0-1) unstable; urgency=low
+
+  * Initial release
+
+ -- Discazos Devel Team <creator@discazos.net>  Sat, 19 May 2012 02:57:53 -0300
