@@ -1,3 +1,10 @@
+discazos-creator (0.2.0-1) unstable; urgency=low
+
+  * Agregados tamaño del archivo y titulo del album al archivo XML.
+  * Versionado correcto de la aplicacion.
+
+ -- Discazos Devel Team <creator@discazos.net>  Sat, 19 May 2012 02:57:53 -0300
+
 discazos-creator (0.1.1-1) unstable; urgency=low
 
   * Fix on saving the info.xml in the correct dir.
