@@ -13,6 +13,7 @@ AlbumInfo::AlbumInfo(QObject *parent) :
 {
     m_albumType = "Artist Album";
     m_recType = "Studio";
+    m_audiofile_size = 0;
     addNewDisc();
 }
 
@@ -57,7 +58,9 @@ bool AlbumInfo::exportInfo(QString dirPath) {
     xml.writeDTD("<!DOCTYPE discazos>");
 
     xml.writeStartElement("discazos-disc-creator");
-    xml.writeAttribute("version", "0.1");
+    xml.writeAttribute("version", XML_FILE_VERSION);
+    xml.writeEmptyElement("album");
+    xml.writeAttribute("title", m_title);
 
     QString number;
     for (int i = 0; i < m_discs.size(); ++i) {
@@ -79,6 +82,9 @@ bool AlbumInfo::exportInfo(QString dirPath) {
         }
         xml.writeEndElement();
     }
+
+    xml.writeEmptyElement("audiofile");
+    xml.writeAttribute("size", QString::number(m_audiofile_size));
 
     xml.writeEndDocument();
     return true;
@@ -127,5 +133,7 @@ bool AlbumInfo::exportAudio(QString dirPath) {
     }
 
     mp3out.close();
+    m_audiofile_size = mp3out.size();
+
     return true;
 }

@@ -36,10 +36,10 @@ void SaveDiscazoPage::saveDiscazo() {
     dirToSave.mkdir(albumTitle);
     dirToSave.cd(albumTitle);
 
-    //Save AlbumInfo in XML file
-    albumInfoPage->albumInfo()->exportInfo(dirToSave.absolutePath());
     //Save audio data to file
     albumInfoPage->albumInfo()->exportAudio(dirToSave.absolutePath());
+    //Save AlbumInfo in XML file
+    albumInfoPage->albumInfo()->exportInfo(dirToSave.absolutePath());
 
     QMessageBox msgBox;
     msgBox.setText(tr("The discazo has been saved succesfully"));

@@ -5,6 +5,8 @@
 
 #include "disc.h"
 
+const QString XML_FILE_VERSION = "0.2";
+
 class AlbumInfo : public QObject
 {
     Q_OBJECT
@@ -34,6 +36,7 @@ private:
     QString m_artist;
     QString m_recType;
     QList< Disc* > m_discs;
+    qint64 m_audiofile_size;
 
 };
 
