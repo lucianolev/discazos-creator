@@ -10,6 +10,6 @@ DiscazosCreator::DiscazosCreator(QWidget *parent) :
     setPage(Page_AlbumInfo, new AlbumInfoPage);
     setPage(Page_SaveDiscazo, new SaveDiscazoPage);
 
-    setWindowTitle(tr("Discazos Creator 0.1"));
+    setWindowTitle(QString(tr("Discazos Creator %1")).arg(APP_VERSION));
     resize(QSize(800, 600));
 }

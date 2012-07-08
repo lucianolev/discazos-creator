@@ -1,3 +1,9 @@
+# The application version
+VERSION = 0.2.0
+
+# Define the preprocessor macro to get the application version in our application.
+DEFINES += APP_VERSION=\\\"$$VERSION\\\"
+
 LIBS += /usr/lib/libtag.so
 
 HEADERS += \

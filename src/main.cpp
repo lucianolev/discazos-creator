@@ -8,6 +8,7 @@
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
+    app.setApplicationVersion(APP_VERSION);
 
 //    QString translatorFileName = QLatin1String("qt_");
 //    translatorFileName += QLocale::system().name();
