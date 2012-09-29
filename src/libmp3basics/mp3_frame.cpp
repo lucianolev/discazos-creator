@@ -115,19 +115,22 @@ unsigned int MP3Frame::sampleRate() {
   }
 }
 
+unsigned int MP3Frame::samplesPerFrame() {
+    unsigned int samplesPerFrame = 0;
+    if(this->mpegVersion() == "1") {
+      samplesPerFrame = 1152;
+    } else if(this->mpegVersion() == "2" || this->mpegVersion() == "2.5") {
+      samplesPerFrame = 576;
+    }
+    return samplesPerFrame;
+}
+
 unsigned int MP3Frame::length() {
   if(!this->isValid()) {
     return 0;
   }
   
-  unsigned int samplesPerFrame = 0;
-  if(this->mpegVersion() == "1") {
-    samplesPerFrame = 1152;
-  } else if(this->mpegVersion() == "2" || this->mpegVersion() == "2.5") {
-    samplesPerFrame = 576;
-  }
-  
-  int length = samplesPerFrame*(1000*this->bitrate())/(8*this->sampleRate());
+  int length = this->samplesPerFrame()*(1000*this->bitrate())/(8*this->sampleRate());
   if(this->m_isPadded())
     length++;
   

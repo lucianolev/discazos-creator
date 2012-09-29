@@ -40,7 +40,7 @@ QVariant MP3TracksModel::data(const QModelIndex &index, int role) const {
             case 2:
                 return m_files.at(index.row())->title();
             case 3:
-                return number.setNum(m_files.at(index.row())->length()) + QString(" secs");
+                return number.setNum(m_files.at(index.row())->lengthInMs() / 1000) + QString(" secs");
             case 4:
                 return number.setNum(m_files.at(index.row())->bitrate()) + QString(" kbps");
             case 5:

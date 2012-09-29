@@ -25,10 +25,13 @@ public:
   unsigned int bitrate();
   unsigned int isVBR();
   unsigned int sampleRate();
-  
+  unsigned int samplesPerFrame();
+  unsigned int lengthInMs();
+
   bool analyzed();
   unsigned int numFrames();
   unsigned int firstFramePos();
+
   
   //bool convert(unsigned int target_bitrate);
   
@@ -44,6 +47,7 @@ private:
   string m_mpegVersion;
   unsigned int m_bitrate;
   unsigned int m_sampleRate;
+  unsigned int m_samplesPerFrame;
   bool m_isVBR;
   unsigned int m_totalBitrate;
   unsigned int m_totalValidFrames;

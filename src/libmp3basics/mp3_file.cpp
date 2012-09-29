@@ -257,6 +257,25 @@ unsigned int MP3File::sampleRate() {
   return m_sampleRate;
 }
 
+unsigned int MP3File::samplesPerFrame() {
+  if(!m_analyzed) {
+    //Throw Exception
+    cout << "El archivo no fue analizado!" << endl;
+  }
+  return m_samplesPerFrame;
+}
+
+unsigned int MP3File::lengthInMs() {
+    if(!m_analyzed) {
+      //Throw Exception
+      cout << "El archivo no fue analizado!" << endl;
+    }
+
+    unsigned int lengthInMs = (this->samplesPerFrame() / (this->sampleRate() / 1000.0)) *
+                               this->numFrames();
+    return lengthInMs;
+}
+
 bool MP3File::analyzed() {
   return m_analyzed;
 }
@@ -328,6 +347,7 @@ void MP3File::m_updateFileInfo(MP3Frame &frame) {
   m_mpegVersion = frame.mpegVersion(); //File mpegVersion = frame mpegVersion
   m_bitrate = frame.bitrate(); //File bitrate = frame bitrate
   m_sampleRate = frame.sampleRate(); //File samplerate = frame samplerate
+  m_samplesPerFrame = frame.samplesPerFrame(); //File samples per frame = frame samples per frame
   m_totalBitrate += frame.bitrate(); //For VBR calculation
   m_bytesJunkAfter = 0; //Reset junkAfter if frame is valid
 

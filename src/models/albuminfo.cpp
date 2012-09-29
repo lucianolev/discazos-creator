@@ -73,7 +73,7 @@ bool AlbumInfo::exportInfo(QString dirPath) {
             MP3Track* currentTrack = currentTrackList.at(j);
             xml.writeStartElement("track");
             xml.writeAttribute("number", number.setNum(j+1));
-            xml.writeAttribute("length", number.setNum(currentTrack->length()));
+            xml.writeAttribute("length", number.setNum(currentTrack->lengthInMs()));
             xml.writeEmptyElement("artist");
             xml.writeAttribute("name", currentTrack->artist());
             xml.writeEmptyElement("song");

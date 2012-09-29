@@ -21,6 +21,7 @@ public:
     int bitrate();
 
     int length();
+    unsigned int lengthInMs();
     QString artist();
     QString title();
 

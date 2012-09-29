@@ -14,6 +14,7 @@ public:
   string mpegVersion();
   unsigned int bitrate();
   unsigned int sampleRate();
+  unsigned int samplesPerFrame();
   unsigned int length();
   
   void debugHeader();

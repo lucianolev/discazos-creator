@@ -5,7 +5,7 @@
 
 #include "disc.h"
 
-const QString XML_FILE_VERSION = "0.2";
+const QString XML_FILE_VERSION = "0.3";
 
 class AlbumInfo : public QObject
 {

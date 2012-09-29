@@ -76,6 +76,10 @@ int MP3Track::length() {
     }
 }
 
+unsigned int MP3Track::lengthInMs() {
+    return this->mp3file()->lengthInMs();
+}
+
 MP3File* MP3Track::mp3file() {
    return m_file;
 }
