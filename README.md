@@ -1,6 +1,6 @@
 # Discazos Creator
 
-Last update: February 2013.
+Last update: June 2012.
 
 A desktop C++ Qt app. Tested only on Linux, but should be portable to other plaforms easily.
 
